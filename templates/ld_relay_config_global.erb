@@ -1,0 +1,13 @@
+[main]
+streamUri = "<%= @stream_uri %>"
+baseUri = "<%= @base_uri %>"
+exitOnError = <%= @exit_on_error %>
+port = <%= @port %>
+heartbeatIntervalSecs = <%= @heartbeat_interval_secs %>
+
+<% if @redis_enable -%>
+[redis]
+host = "<%= @redis_host %>"
+port = <%= @redis_port %>
+localTtl = <%= @redis_local_ttl %>
+<% end -%>
