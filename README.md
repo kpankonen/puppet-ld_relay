@@ -125,6 +125,30 @@ ld_relay::environment { 'production':
 * Sets the listening port for the ld-relay daemon
 * Default: `8030`
 
+##### `events_enable`
+* The ld-relay daemon can be configured to buffer and forward events to the LaunchDarkly bulk events service. The primary use case for this is PHP environments, where the performance of a local proxy makes it possible to synchronously flush analytics events.
+* Default: `true`
+
+##### `events_uri`
+* URI of LaunchDarkly events endpoint
+* Default: `https://events.launchdarkly.com`
+
+##### `events_send`
+* Should events be forwarded to the LaunchDarkly events endpoint
+* Default: `true`
+
+##### `events_flush_interval`
+* How often should events be flushed from the buffer (in seconds)
+* Default: `5`
+
+##### `events_sampling_interval`
+* Unclear if this actually does anything
+* Default: `0`
+
+##### `events_capacity`
+* Maximum number of events in the buffer
+* Default: `10000`
+
 ##### `redis_enable`
 * The ld-relay daemon can be configured to persist feature flag settings in Redis. This provides durability in case of (e.g.) a temporary network partition that prevents ld-relay from communicating with LaunchDarkly's servers.
 * Default: `false`

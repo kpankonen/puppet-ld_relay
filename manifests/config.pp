@@ -6,17 +6,23 @@ class ld_relay::config {
 
   assert_private()
 
-  $base_uri                = $::ld_relay::base_uri
-  $config_file             = $::ld_relay::config_file
-  $exit_on_error           = $::ld_relay::_exit_on_error
-  $heartbeat_interval_secs = $::ld_relay::heartbeat_interval_secs
-  $manage_config           = $::ld_relay::manage_config
-  $port                    = $::ld_relay::port
-  $redis_enable            = $::ld_relay::redis_enable
-  $redis_host              = $::ld_relay::redis_host
-  $redis_local_ttl         = $::ld_relay::redis_local_ttl
-  $redis_port              = $::ld_relay::redis_port
-  $stream_uri              = $::ld_relay::stream_uri
+  $base_uri                 = $::ld_relay::base_uri
+  $config_file              = $::ld_relay::config_file
+  $exit_on_error            = $::ld_relay::_exit_on_error
+  $heartbeat_interval_secs  = $::ld_relay::heartbeat_interval_secs
+  $manage_config            = $::ld_relay::manage_config
+  $port                     = $::ld_relay::port
+  $events_enable            = $::ld_relay::events_enable
+  $events_uri               = $::ld_relay::events_uri
+  $events_send              = $::ld_relay::events_send
+  $events_flush_interval    = $::ld_relay::events_flush_interval
+  $events_sampling_interval = $::ld_relay::events_sampling_interval
+  $events_capacity          = $::ld_relay::events_capacity
+  $redis_enable             = $::ld_relay::redis_enable
+  $redis_host               = $::ld_relay::redis_host
+  $redis_local_ttl          = $::ld_relay::redis_local_ttl
+  $redis_port               = $::ld_relay::redis_port
+  $stream_uri               = $::ld_relay::stream_uri
 
   if $manage_config {
     concat { 'ld_relay_config':

@@ -7,6 +7,7 @@ class ld_relay::install {
   assert_private()
 
   package { $::ld_relay::package_name:
-    ensure => $::ld_relay::package_ensure,
+    ensure  => $::ld_relay::package_ensure,
+    require => File['WebPT.repo'],
   }
 }

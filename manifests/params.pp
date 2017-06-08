@@ -5,8 +5,6 @@
 #
 class ld_relay::params {
 
-  assert_private()
-
   case $::osfamily {
     'RedHat', 'Amazon': {
       $package_name = 'ld-relay'
