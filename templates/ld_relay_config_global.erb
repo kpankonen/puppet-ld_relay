@@ -1,7 +1,7 @@
 [main]
 streamUri = "<%= @stream_uri %>"
 baseUri = "<%= @base_uri %>"
-exitOnError = <%= @_exit_on_error %>
+exitOnError = <%= @exit_on_error %>
 port = <%= @port %>
 heartbeatIntervalSecs = <%= @heartbeat_interval_secs %>
 <% if @redis_enable -%>
@@ -15,7 +15,7 @@ localTtl = <%= @redis_local_ttl %>
 
 [events]
 eventsUri = "<%= @events_uri %>"
-sendEvents = <%= @_events_send %>
+sendEvents = <%= @events_send %>
 flushIntervalSecs = <%= @events_flush_interval %>
 samplingInterval = <%= @events_sampling_interval %>
 capacity = <%= @events_capacity %>

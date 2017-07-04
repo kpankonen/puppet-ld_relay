@@ -121,6 +121,7 @@ class ld_relay (
   validate_bool($manage_config)
   validate_bool($redis_enable)
   validate_bool($events_enable)
+  validate_bool($events_send)
   validate_bool($service_enable)
   validate_bool($service_manage)
   validate_integer($heartbeat_interval_secs)
@@ -139,9 +140,6 @@ class ld_relay (
       $_service_ensure = undef
     }
   }
-
-  $_exit_on_error = bool2str($exit_on_error)
-  $_events_send = bool2str($events_send)
 
   class { '::ld_relay::install': }
   ~> class { '::ld_relay::config': }
